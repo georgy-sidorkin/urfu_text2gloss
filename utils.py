@@ -49,7 +49,7 @@ def download_model_rusvectores(model_id="180"):
         model_url = f'http://vectors.nlpl.eu/repository/11/{model_id}.zip'
         m = wget.download(model_url)
         with zipfile.ZipFile(f'{model_id}.zip', 'r') as zip_ref:
-            unzip_path = "models/" + model_id
+            unzip_path = "models/" + str(model_id)
             zip_ref.extractall(unzip_path)
     return f"models/{model_id}"
 
